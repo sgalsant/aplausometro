@@ -9,23 +9,31 @@ h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,
 .tab.active{background:var(--color-background-secondary);color:var(--color-text-primary)}
 .tab:not(:last-child){border-right:0.5px solid var(--color-border-tertiary)}
 .panel{display:none}.panel.active{display:block}
-.question-box{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-bottom:1rem;min-height:72px;display:flex;align-items:center;justify-content:center;text-align:center}
-.q-label{font-size:12px;color:var(--color-text-secondary);margin-bottom:4px}
-.q-text{font-size:20px;font-weight:500;color:var(--color-text-primary);line-height:1.4}
-.q-counter{font-size:12px;color:var(--color-text-secondary);margin-top:5px}
+.question-box{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.5rem 2rem;margin-bottom:1rem;min-height:110px;display:flex;align-items:center;justify-content:center;text-align:center}
+.q-label{font-size:12px;color:var(--color-text-secondary);margin-bottom:8px}
+.q-text{font-size:42px;font-weight:500;color:var(--color-text-primary);line-height:1.25}
+.q-counter{font-size:13px;color:var(--color-text-secondary);margin-top:10px}
 .canvas-wrap{position:relative;width:100%;height:210px;border-radius:var(--border-radius-lg);overflow:hidden;margin-bottom:1rem}
 canvas#balls{width:100%;height:100%;display:block}
 .cd-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
 .cd-number{font-size:96px;font-weight:500;color:rgba(255,255,255,0.92);text-shadow:0 2px 12px rgba(0,0,0,0.7);line-height:1;transition:transform .15s}
 .cd-number.pulse{transform:scale(1.15)}
 .overlay-db{position:absolute;top:10px;right:14px;font-size:22px;font-weight:500;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,0.7)}
-.meter-wrap{height:8px;background:var(--color-background-secondary);border-radius:999px;border:0.5px solid var(--color-border-tertiary);overflow:hidden;margin-bottom:1rem}
+.meter-wrap{height:8px;background:var(--color-background-secondary);border-radius:999px;border:0.5px solid var(--color-border-tertiary);overflow:hidden;margin-bottom:1.1rem}
 .meter-bar{height:100%;width:0%;border-radius:999px;background:#1D9E75;transition:width .08s,background .1s}
-.controls{display:flex;gap:10px;justify-content:center;margin-bottom:.75rem;align-items:center}
-.btn{font-size:14px;font-weight:500;padding:9px 20px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);color:var(--color-text-primary);cursor:pointer;display:flex;align-items:center;gap:7px;transition:background .15s}
-.btn:hover:not(:disabled){background:var(--color-background-secondary)}
-.btn:disabled{opacity:0.45;cursor:default}
-.btn.active{background:#FCEBEB;border-color:#E24B4A;color:#A32D2D}
+.controls{display:flex;gap:12px;justify-content:center;margin-bottom:.85rem;align-items:stretch}
+.btn-next{display:flex;align-items:center;gap:8px;padding:13px 22px;font-size:15px;font-weight:500;border-radius:var(--border-radius-lg);border:none;cursor:pointer;background:#185FA5;color:#fff;transition:background .15s,transform .1s;flex:1;max-width:220px;justify-content:center}
+.btn-next:hover:not(:disabled){background:#0C447C}
+.btn-next:active:not(:disabled){transform:scale(0.97)}
+.btn-next:disabled{opacity:0.42;cursor:default}
+.btn-next i{font-size:20px}
+.btn-record{display:flex;align-items:center;gap:8px;padding:13px 22px;font-size:15px;font-weight:500;border-radius:var(--border-radius-lg);border:none;cursor:pointer;background:#1D9E75;color:#fff;transition:background .15s,transform .1s;flex:1;max-width:220px;justify-content:center}
+.btn-record:hover:not(:disabled){background:#0F6E56}
+.btn-record:active:not(:disabled){transform:scale(0.97)}
+.btn-record:disabled{opacity:0.42;cursor:default}
+.btn-record i{font-size:20px}
+.btn-record.active{background:#A32D2D}
+.btn-record.active:hover{background:#791F1F}
 .status-msg{font-size:13px;color:var(--color-text-secondary);text-align:center;min-height:18px;margin-bottom:1rem}
 .results-title{font-size:13px;color:var(--color-text-secondary);margin-bottom:8px}
 .results-list{display:flex;flex-direction:column;gap:6px}
@@ -40,11 +48,13 @@ canvas#balls{width:100%;height:100%;display:block}
 .cfg-hint{font-size:12px;color:var(--color-text-secondary);margin-bottom:8px}
 textarea#cfg-questions{width:100%;height:220px;font-size:14px;line-height:1.7;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:10px 12px;background:var(--color-background-primary);color:var(--color-text-primary);resize:vertical;font-family:var(--font-sans)}
 .cfg-actions{display:flex;gap:8px;margin-top:10px}
+.btn-save{display:flex;align-items:center;gap:7px;padding:9px 20px;font-size:14px;font-weight:500;border-radius:var(--border-radius-md);border:none;background:#185FA5;color:#fff;cursor:pointer;transition:background .15s}
+.btn-save:hover{background:#0C447C}
 .cfg-save-msg{font-size:13px;color:var(--color-text-success);margin-left:8px;align-self:center}
 .footer{margin-top:1.5rem;padding-top:1rem;border-top:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.footer-left{display:flex;align-items:center;gap:8px}
+.footer-left{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .footer-badge{display:flex;align-items:center;gap:6px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:5px 10px;font-size:12px;color:var(--color-text-secondary)}
-.footer-badge i{font-size:14px;color:var(--color-text-secondary)}
+.footer-badge i{font-size:14px}
 .footer-sep{width:1px;height:16px;background:var(--color-border-tertiary)}
 .footer-right{font-size:12px;color:var(--color-text-secondary);text-align:right}
 </style>
@@ -59,9 +69,9 @@ textarea#cfg-questions{width:100%;height:220px;font-size:14px;line-height:1.7;bo
 
   <div class="panel active" id="panel-taller">
     <div class="question-box">
-      <div>
+      <div style="width:100%">
         <div class="q-label">Pregunta actual</div>
-        <div class="q-text" id="q-text">Pulsa "Siguiente" para cargar la primera pregunta</div>
+        <div class="q-text" id="q-text"></div>
         <div class="q-counter" id="q-counter"></div>
       </div>
     </div>
@@ -72,18 +82,18 @@ textarea#cfg-questions{width:100%;height:220px;font-size:14px;line-height:1.7;bo
     </div>
     <div class="meter-wrap"><div class="meter-bar" id="meter-bar"></div></div>
     <div class="controls">
-      <button class="btn" id="btn-next"><i class="ti ti-arrow-right" aria-hidden="true"></i> Siguiente pregunta</button>
-      <button class="btn" id="btn-start" disabled><i class="ti ti-player-record" aria-hidden="true"></i> Medir aplausos</button>
+      <button class="btn-next" id="btn-next"><i class="ti ti-arrow-right" aria-hidden="true"></i> Siguiente pregunta</button>
+      <button class="btn-record" id="btn-start"><i class="ti ti-player-record" aria-hidden="true"></i> Medir aplausos</button>
     </div>
-    <div class="status-msg" id="status-msg">Configura las preguntas en la pestaña "Preguntas" y pulsa Siguiente</div>
+    <div class="status-msg" id="status-msg">Pregunta lista. Pulsa "Medir aplausos" cuando el público responda.</div>
     <div class="results-title">Resultados del taller</div>
     <div class="results-list" id="results-list"><div class="no-results">Aún no hay mediciones.</div></div>
   </div>
 
   <div class="panel" id="panel-config">
     <div class="cfg-label">Preguntas del taller</div>
-    <div class="cfg-hint">Una pregunta por línea. Se mostrarán en orden durante el taller.</div>
-    <textarea id="cfg-questions">Prueba de sonido, ¡Vamos allá!
+    <div class="cfg-hint">Una pregunta por línea. La primera se usa como prueba de sonido.</div>
+    <textarea id="cfg-questions">Prueba de sonido, ¡vamos!
 ¿Conocías la inteligencia artificial antes de este taller?
 ¿Crees que la IA puede ayudarte en tu trabajo diario?
 ¿Has usado alguna vez ChatGPT u otra IA?
@@ -92,34 +102,24 @@ textarea#cfg-questions{width:100%;height:220px;font-size:14px;line-height:1.7;bo
 ¿Te gustaría aprender más sobre inteligencia artificial?
 ¿Piensas que la IA puede ser creativa?</textarea>
     <div class="cfg-actions">
-      <button class="btn" id="btn-save"><i class="ti ti-check" aria-hidden="true"></i> Guardar preguntas</button>
+      <button class="btn-save" id="btn-save"><i class="ti ti-check" aria-hidden="true"></i> Guardar preguntas</button>
       <span class="cfg-save-msg" id="save-msg"></span>
     </div>
   </div>
 
   <footer class="footer">
     <div class="footer-left">
-      <div class="footer-badge">
-        <i class="ti ti-cpu" aria-hidden="true"></i>
-        Realizado con Claude Sonnet 4.6
-      </div>
+      <div class="footer-badge"><i class="ti ti-cpu" aria-hidden="true"></i>Realizado con Claude Sonnet 4.6</div>
       <div class="footer-sep"></div>
-      <div class="footer-badge">
-        <i class="ti ti-school" aria-hidden="true"></i>
-        Ciclos de Informática
-      </div>
+      <div class="footer-badge"><i class="ti ti-school" aria-hidden="true"></i>Ciclos de Informática</div>
     </div>
-    <div class="footer-right">
-      IES Ana Luisa Benítez<br>
-      <span style="color:var(--color-text-secondary)">Las Palmas de Gran Canaria</span>
-    </div>
+    <div class="footer-right">IES Ana Luisa Benítez<br><span style="color:var(--color-text-secondary)">Las Palmas de Gran Canaria</span></div>
   </footer>
 </div>
 
 <script>
 (function(){
-const DURATION=6;
-const N=16;
+const DURATION=6,N=16;
 const BALL_COLORS=[
   {base:'#3a8ef5',light:'#7ab8ff',dark:'#1a5db0',shine:'rgba(255,255,255,0.6)'},
   {base:'#e0432a',light:'#ff7a5a',dark:'#a02010',shine:'rgba(255,255,255,0.55)'},
@@ -127,8 +127,7 @@ const BALL_COLORS=[
   {base:'#9966ff',light:'#c49aff',dark:'#6633bb',shine:'rgba(255,255,255,0.55)'},
   {base:'#f0a020',light:'#ffd060',dark:'#b07010',shine:'rgba(255,255,255,0.55)'},
 ];
-
-let questions=[],qIndex=-1,balls=[],measuring=false,dbSamples=[],timeLeft=DURATION;
+let questions=[],qIndex=0,balls=[],measuring=false,dbSamples=[],timeLeft=DURATION;
 let rafId=null,timerInterval=null,audioCtx=null,analyser=null,dataArray=null,stream=null;
 let measurements=[],currentNorm=0;
 
@@ -147,8 +146,19 @@ const cfgTA=document.getElementById('cfg-questions');
 const btnSave=document.getElementById('btn-save');
 const saveMsg=document.getElementById('save-msg');
 
-function loadQuestions(){questions=cfgTA.value.split('\n').map(s=>s.trim()).filter(s=>s.length>0);}
+function loadQuestions(){
+  questions=cfgTA.value.split('\n').map(s=>s.trim()).filter(s=>s.length>0);
+}
+
+function showQuestion(idx){
+  qTextEl.textContent=questions[idx];
+  qCounterEl.textContent=(idx+1)+' de '+questions.length;
+  btnStart.disabled=false;
+  statusMsg.textContent='Pregunta lista. Pulsa "Medir aplausos" cuando el público responda.';
+}
+
 loadQuestions();
+showQuestion(0);
 
 document.querySelectorAll('.tab').forEach(t=>{
   t.addEventListener('click',()=>{
@@ -160,9 +170,10 @@ document.querySelectorAll('.tab').forEach(t=>{
 });
 
 btnSave.addEventListener('click',()=>{
-  loadQuestions();qIndex=-1;
-  qTextEl.textContent='Pulsa "Siguiente" para cargar la primera pregunta';
-  qCounterEl.textContent='';btnStart.disabled=true;
+  loadQuestions();
+  qIndex=0;
+  showQuestion(0);
+  btnNext.disabled=false;
   saveMsg.textContent='¡Guardado! '+questions.length+' preguntas listas.';
   setTimeout(()=>saveMsg.textContent='',2500);
   document.querySelector('[data-tab="taller"]').click();
@@ -246,7 +257,7 @@ function animLoop(){
 }
 
 async function startMeasure(){
-  if(measuring||qIndex<0)return;
+  if(measuring)return;
   try{stream=await navigator.mediaDevices.getUserMedia({audio:true,video:false});}
   catch(e){statusMsg.textContent='No se pudo acceder al micrófono. Verifica los permisos.';return;}
   audioCtx=new(window.AudioContext||window.webkitAudioContext)();
@@ -270,7 +281,7 @@ function stopMeasure(){
   clearInterval(timerInterval);measuring=false;cdNumber.textContent='';
   btnStart.classList.remove('active');
   btnStart.innerHTML='<i class="ti ti-player-record" aria-hidden="true"></i> Medir aplausos';
-  btnStart.disabled=(qIndex<0||qIndex>=questions.length);btnNext.disabled=false;
+  btnStart.disabled=false;btnNext.disabled=false;
   if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;}
   if(audioCtx){audioCtx.close();audioCtx=null;analyser=null;dataArray=null;}
   const valid=dbSamples.filter(v=>v>-90);
@@ -304,10 +315,7 @@ btnNext.addEventListener('click',()=>{
     qCounterEl.textContent='';btnNext.disabled=true;btnStart.disabled=true;
     statusMsg.textContent='Todas las preguntas han sido medidas.';return;
   }
-  qTextEl.textContent=questions[qIndex];
-  qCounterEl.textContent=(qIndex+1)+' de '+questions.length;
-  btnStart.disabled=false;
-  statusMsg.textContent='Pregunta lista. Pulsa "Medir aplausos" cuando el público responda.';
+  showQuestion(qIndex);
 });
 
 btnStart.addEventListener('click',startMeasure);
